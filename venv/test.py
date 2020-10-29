@@ -38,5 +38,22 @@ def birthdayCakeCandles(candles):
     print(tallest_count)
 
 
+# s = '12:05:45AM'
+def timeConversion(s):
+    hours = s[0:2]
+    minutes = s[3:5]
+    seconds = s[6:8]
+    t = s[8:10]
+    print('t:', t)
+    print('hours:', hours)
+
+    if(t == 'PM' and int(hours) < 12):
+        hours = int(hours)+12
+
+    if(t == 'AM' and int(hours) == 12):
+        hours = '00'
+
+    return f"{hours}:{minutes}:{seconds}"
+
 if __name__ == '__main__':
     print('Hello')
