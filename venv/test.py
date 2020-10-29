@@ -39,4 +39,4 @@ def birthdayCakeCandles(candles):
 
 
 if __name__ == '__main__':
-    birthdayCakeCandles(candles)
+    print('Hello')
