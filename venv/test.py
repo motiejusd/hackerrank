@@ -17,18 +17,26 @@ def plusMinus(arr):
         if arr[x] == 0:
             zer += 1
     return ['{:.6f}'.format(pos/len(arr)), '{:.6f}'.format(neg/len(arr)), '{:.6f}'.format(zer/len(arr))]
+
+
 def staircase(n):
     for i in range(1, n + 1):
         print(str('#' * i).rjust(n))
+
+
 def miniMaxSum(arr):
     mi = sum(arr)-max(arr)
     ma = sum(arr)-min(arr)
     print(mi)
     print(ma)
+    return True
 
-    return True
-candles = [4,4,1,3]
+
 def birthdayCakeCandles(candles):
-    return True
+    tallest = max(candles)
+    tallest_count = candles.count(tallest)
+    print(tallest_count)
+
+
 if __name__ == '__main__':
     birthdayCakeCandles(candles)
