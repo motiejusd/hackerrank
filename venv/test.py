@@ -107,5 +107,18 @@ def gradingStudents(grades):
 
     return grades
 
+
+def countApplesAndOranges(s, t, a, b, apples, oranges):
+    apl = 0
+    orng = 0
+    for apple in apples:
+        if a + apple >= s and a + apple <= t:
+            apl += 1
+    for orange in oranges:
+        if b + orange >= s and b + orange <= t:
+            orng += 1
+    print(apl)
+    print(orng)
+
 if __name__ == '__main__':
-    gradingStudents([73,67,38,33])
+    print('hi')
