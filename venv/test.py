@@ -94,5 +94,18 @@ def secToLowest(li):
     for x in lowest_2nd_list:
         print(x)
 
+
+def gradingStudents(grades):
+    for grade in range(0, len(grades)):
+        next_mult_5 = grades[grade]
+
+        while(next_mult_5 % 5 != 0):
+            next_mult_5 += 1
+
+        if next_mult_5 - grades[grade] < 3 and grades[grade] >= 38:
+            grades[grade] = next_mult_5
+
+    return grades
+
 if __name__ == '__main__':
-    print('Hello')
+    gradingStudents([73,67,38,33])
