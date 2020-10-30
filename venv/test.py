@@ -120,5 +120,17 @@ def countApplesAndOranges(s, t, a, b, apples, oranges):
     print(apl)
     print(orng)
 
+
+def pyListCmd(arr): #run list commands from userInput
+    for x in range(0, len(arr)):
+        spl = input().split(' ')
+        cmd = spl[0]
+        args = ','.join(spl[1:])
+
+        if cmd != 'print':
+            eval(f'arr.{cmd}({args})')
+        else:
+            print(arr)
+
 if __name__ == '__main__':
     print('hi')
