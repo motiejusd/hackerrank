@@ -69,5 +69,30 @@ def runnerUp(scores):
             second = x
     return second
 
+
+#print list of names with second to lowest score from nested list
+def secToLowest(li):
+    scores = list()
+    lowest_2nd_list = list()
+
+    for n, s in li:
+        scores.append(s)
+
+    lowest = min(scores)
+    lowest_2nd = max(scores)
+
+    for l in scores:
+        if l < lowest_2nd and lowest < l:
+            lowest_2nd = l
+
+    for name, score in li:
+        if score == lowest_2nd:
+            lowest_2nd_list.append(name)
+
+    lowest_2nd_list.sort()
+
+    for x in lowest_2nd_list:
+        print(x)
+
 if __name__ == '__main__':
- print('hi')
+    print('Hi')
