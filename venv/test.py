@@ -55,5 +55,10 @@ def timeConversion(s):
 
     return f"{hours}:{minutes}:{seconds}"
 
+
+def dimOfCuboid(x, y, z, n): # returns all possible coordinations for cuboid except if x+y+z == n
+    result = [[a, b, c] for a in range(0, x+1) for b in range(0, y+1) for c in range(0, z+1) if a+b+c != n]
+    return result
+
 if __name__ == '__main__':
-    print('Hello')
+    print('Hi')
