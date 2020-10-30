@@ -60,5 +60,14 @@ def dimOfCuboid(x, y, z, n): # returns all possible coordinations for cuboid exc
     result = [[a, b, c] for a in range(0, x+1) for b in range(0, y+1) for c in range(0, z+1) if a+b+c != n]
     return result
 
+
+def runnerUp(scores):
+    first = max(scores)
+    second = 0
+    for x in scores:
+        if x < first and x > second:
+            second = x
+    return second
+
 if __name__ == '__main__':
-    print('Hi')
+ print('hi')
