@@ -159,5 +159,26 @@ def countingValleys(steps, path):
 
     return print(valleyCount)
 
+
+def jumpingOnClouds(c):
+    position = 0
+    steps = 0
+
+    while(position < len(c)-2):
+        if c[position+1] == 1:
+            steps += 1
+            position += 2
+        elif c[position+1] == 0  and c[position+2] == 0:
+            steps += 1
+            position += 2
+        else:
+            steps += 1
+            position += 1
+
+    if len(c) - position == 2:
+        steps += 1
+
+    return steps
+
 if __name__ == '__main__':
-    countingValleys(8, 'UDDDUDUU')
+    jumpingOnClouds([0,1,0,0,0,0,0,1,0,0])
