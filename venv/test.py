@@ -187,5 +187,28 @@ def repeatedString(s, n):
 
     return whole + remainder
 
+
+def hourglassSum(arr):
+    maximum_sum = -81
+    hourglassList = []
+    sumList = 0
+    for x in range(len(arr[0])-2): # x axis cycle
+        for y in range(len(arr)-2):
+            hourglassList = [arr[x][y], arr[x][y+1], arr[x][y+2], arr[x+1][y+1], arr[x+2][y], arr[x+2][y+1], arr[x+2][y+2]]
+            sumList = 0
+            for lel in range(len(hourglassList)):
+                if(hourglassList[lel] <= 9 and hourglassList[lel] >= -9):
+                    sumList += hourglassList[lel]
+            if sumList > maximum_sum : maximum_sum = sumList
+
+    return print(maximum_sum)
+
 if __name__ == '__main__':
-    print(repeatedString('babbaabbabaababaaabbbbbbbababbbabbbababaabbbbaaaaabbaababaaabaabbabababaabaabbbababaabbabbbababbaabb', 860622337747))
+    arr = [[9,9,9,0,10,0],
+           [0,9,0,10,10,0],
+           [9,9,10,1,10,10],
+           [1,1,1,0,0,0],
+           [0,5,0,0,0,0],
+           [4,1,4,0,0,0]]
+
+    hourglassSum(arr)
