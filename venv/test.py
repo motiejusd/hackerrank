@@ -143,5 +143,21 @@ def sockMerchant(n, ar):
             tested_colors.append(ar[color])
     return print(number)
 
+def countingValleys(steps, path):
+    valleyCount = 0
+    sea_level = 0
+
+    for pos in path:
+        prev = sea_level
+        if pos == 'U':
+            sea_level += 1
+        if pos == 'D':
+            sea_level -= 1
+
+        if sea_level > -1 and prev < 0:
+            valleyCount += 1
+
+    return print(valleyCount)
+
 if __name__ == '__main__':
-    sockMerchant(7, [1,2,1,2,1,3,2])
+    countingValleys(8, 'UDDDUDUU')
