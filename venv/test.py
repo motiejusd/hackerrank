@@ -180,5 +180,12 @@ def jumpingOnClouds(c):
 
     return steps
 
+
+def repeatedString(s, n):
+    whole = s.count('a') * (n // len(s))
+    remainder =  s[:n % len(s)].count('a')
+
+    return whole + remainder
+
 if __name__ == '__main__':
-    jumpingOnClouds([0,1,0,0,0,0,0,1,0,0])
+    print(repeatedString('babbaabbabaababaaabbbbbbbababbbabbbababaabbbbaaaaabbaababaaabaabbabababaabaabbbababaabbabbbababbaabb', 860622337747))
