@@ -132,5 +132,16 @@ def pyListCmd(arr): #run list commands from userInput
         else:
             print(arr)
 
+def sockMerchant(n, ar):
+    number = 0
+    tested_colors = []
+    for color in range(n):
+        if ar[color] not in tested_colors:
+            how_many_socks = ar.count(ar[color])
+            how_many_pairs = int(how_many_socks / 2)
+            number += how_many_pairs
+            tested_colors.append(ar[color])
+    return print(number)
+
 if __name__ == '__main__':
-    print('hi')
+    sockMerchant(7, [1,2,1,2,1,3,2])
