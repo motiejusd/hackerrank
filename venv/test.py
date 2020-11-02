@@ -203,12 +203,16 @@ def hourglassSum(arr):
 
     return print(maximum_sum)
 
-if __name__ == '__main__':
-    arr = [[9,9,9,0,10,0],
-           [0,9,0,10,10,0],
-           [9,9,10,1,10,10],
-           [1,1,1,0,0,0],
-           [0,5,0,0,0,0],
-           [4,1,4,0,0,0]]
 
-    hourglassSum(arr)
+def rotLeft(a, d):
+
+    for sk in range(d):
+        first = a.pop(0)
+        a.append(first)
+
+    return print(a)
+
+if __name__ == '__main__':
+    a = [1,2,3,4,5]
+    d = 4
+    rotLeft(a,d)
