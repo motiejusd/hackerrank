@@ -205,14 +205,33 @@ def hourglassSum(arr):
 
 
 def rotLeft(a, d):
-
     for sk in range(d):
         first = a.pop(0)
         a.append(first)
 
     return print(a)
 
+    # count how many lower numbers there are on the right side of
+    # the list from current list element
+def minimumBribes(q):
+    # input # result
+    # q = [5,1,2,3,7,8,6,4] # Too chaotic
+    # q = [1,2,5,3,7,8,6,4] # 7
+    # q = [1,2,5,3,4,7,8,6] # 4
+    # q = [2,1,5,3,4] # 3
+    # q = [2,5,1,3,4] # Too chaotic
+
+    bribes = 0
+    q = [position-1 for position in q] # -1 from position so queue starts at 0 as the list count
+
+    for index,position in enumerate(q): #enumerating index and position (if possition is not changed, index = position)
+        if position - index > 2: # if position is further than 2 elements away, its too chaotic
+            return print('Too chaotic')
+
+        for x in range(max(position-1,0),index): # range(position-1, i) but replacing position-1 to max(position-1, 0) for negative num handling
+            if q[x] > position: # if condition is true, it means they used a bribe to get to this position
+                bribes += 1
+    print(bribes)
+
 if __name__ == '__main__':
-    a = [1,2,3,4,5]
-    d = 4
-    rotLeft(a,d)
+    pass
