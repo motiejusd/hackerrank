@@ -3,7 +3,7 @@ import os
 import random
 import re
 import sys
-
+from collections import OrderedDict
 
 def plusMinus(arr):
     pos = 0
@@ -233,5 +233,27 @@ def minimumBribes(q):
                 bribes += 1
     print(bribes)
 
+
+def ordDictExercise():
+# Task
+# You are the manager of a supermarket.
+# You have a list of N items together with their prices that consumers bought on a particular day.
+# Your task is to print each item_name and net_price in order of its first occurrence.
+# comm.: OrderedDict is only used because result output must be identical for assignment to count as completed.
+
+    ord_dict = OrderedDict()
+
+    for x in range(int(input())):
+        name, _, price = input().rpartition(" ")
+        if name not in ord_dict:
+            ord_dict[name] = price
+        elif name in ord_dict:
+            total_price = int(ord_dict[name]) + int(price)
+            ord_dict[name] = total_price
+
+    for key, value in ord_dict.items():
+        print(key, value)
+
+
 if __name__ == '__main__':
-    pass #
+    print('thanks for checking my work. Have a nice day.')
