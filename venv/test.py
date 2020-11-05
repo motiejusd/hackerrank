@@ -3,7 +3,7 @@ import os
 import random
 import re
 import sys
-from collections import OrderedDict
+from collections import OrderedDict, Counter
 
 def plusMinus(arr):
     pos = 0
@@ -255,5 +255,16 @@ def ordDictExercise():
         print(key, value)
 
 
+def wordOrder():
+    #sample input: 4 one two three two
+    #sample output: 3 /n 1 2 1
+    li = []
+    for x in range(int(input())):
+        li.append(input())
+
+    print(len(Counter(li).keys()))
+    print(' '.join(str(i) for i in Counter(li).values()))
+
 if __name__ == '__main__':
-    print('thanks for checking my work. Have a nice day.')
+    # print('thanks for checking my work. Have a nice day.')
+    wordOrder()
