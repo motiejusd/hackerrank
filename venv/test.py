@@ -265,6 +265,19 @@ def wordOrder():
     print(len(Counter(li).keys()))
     print(' '.join(str(i) for i in Counter(li).values()))
 
+
+def count_substring(string, sub_string): # count occurencies of sub_string in string
+    count = 0
+    for i in range(0, len(string) - (len(sub_string)-1)):
+        if string[i:i+len(sub_string)] == sub_string:
+            count += 1
+    return count
+
+def solve(s): # make words in string capitalised except the ones starting with numbers.
+    for x in s.split():
+        s = s.replace(x, x.capitalize())
+    return s
+
+
 if __name__ == '__main__':
     # print('thanks for checking my work. Have a nice day.')
-    wordOrder()
